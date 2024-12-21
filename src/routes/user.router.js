@@ -2,6 +2,7 @@ const { Router } = require("express");
 const userController = require("../controllers/user.controller");
 const userValidation = require("../validations/user.validation");
 const validationMiddleware = require("../middlewares/validation.middleware");
+const authMiddleware = require("../middlewares/auth.middleware");
 
 const userRouter = Router();
 
@@ -68,6 +69,13 @@ userRouter.post(
   "/",
   validationMiddleware(userValidation.create),
   userController.create
+);
+
+userRouter.post(
+  "/password",
+  authMiddleware,
+  validationMiddleware(userValidation.resetPassword),
+  userController.resetPassword
 );
 
 module.exports = userRouter;
