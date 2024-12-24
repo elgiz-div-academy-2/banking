@@ -1,4 +1,4 @@
-const User = require("../database/User.model");
+const { User } = require("../models");
 const { NotFoundError, AppError } = require("../utiils/error.utils");
 
 const bcrypt = require("bcrypt");

@@ -1,5 +1,4 @@
-const ActivationModel = require("../database/Activation.model");
-const User = require("../database/User.model");
+const { User, ActivationModel } = require("../models");
 const { NotFoundError, AppError } = require("../utiils/error.utils");
 
 const dateFns = require("date-fns");

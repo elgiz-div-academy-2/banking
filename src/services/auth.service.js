@@ -1,4 +1,4 @@
-const User = require("../database/User.model");
+const { User } = require("../models");
 const bcrypt = require("bcrypt");
 const { encodePayload } = require("../utiils/jwt.utils");
 const { AppError } = require("../utiils/error.utils");

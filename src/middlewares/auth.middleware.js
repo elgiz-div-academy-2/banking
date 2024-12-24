@@ -1,4 +1,4 @@
-const User = require("../database/User.model");
+const User = require("../models/User.model");
 const { UnauthorizedError } = require("../utiils/error.utils");
 const { decodePayload } = require("../utiils/jwt.utils");
 

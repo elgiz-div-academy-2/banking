@@ -12,15 +12,11 @@ const errorMiddleware = require("./middlewares/error.middleware");
 const userService = require("./services/user.service");
 const swagger = require("./swagger");
 
-require("./database");
+require("./models");
 
 const app = express();
 app.use(cors());
-app.use((req, res, next) => {
-  res.setHeader("bypass-tunnel-reminder", "true");
-  res.setHeader("Content-Security-Policy", "default-src *; font-src *;");
-  next();
-});
+
 app.use(express.json());
 
 app.use("/api", router);
